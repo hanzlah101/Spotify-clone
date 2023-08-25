@@ -70,9 +70,3 @@ export interface Subscription {
   trial_end?: string
   prices?: Price
 }
-
-export type FileType = {
-  type: string
-  name: string
-  content: string | ArrayBuffer | null
-}
