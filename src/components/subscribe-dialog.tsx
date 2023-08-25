@@ -27,7 +27,7 @@ export const SubscribeDialog: React.FC<SubscribeDialogProps> = ({
   products,
 }) => {
   const subscribeDialog = useSubscribeDialog()
-  const { user, isLoading, subscription } = useUser()
+  const { user, subscription } = useUser()
 
   const [priceIdLoading, setPriceIdLoading] = React.useState<string>()
 
@@ -79,8 +79,8 @@ export const SubscribeDialog: React.FC<SubscribeDialogProps> = ({
               size='lg'
               key={price.id}
               className='mb-4'
-              disabled={isLoading}
               onClick={() => handleCheckout(price)}
+              disabled={price.id === priceIdLoading}
             >
               {`Subscribe for ${formatPrice(price)} a ${price?.interval}`}
             </Button>
