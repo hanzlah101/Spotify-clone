@@ -84,8 +84,9 @@ export const SubscribeDialog: React.FC<SubscribeDialogProps> = ({
                 size='lg'
                 key={price.id}
                 className='mb-4'
+                isLoading={isLoading}
                 onClick={() => handleCheckout(price)}
-                isLoading={isLoading || price.id === priceIdLoading}
+                disabled={isLoading || price.id === priceIdLoading}
               >
                 {`Subscribe for ${formatPrice(price)} a ${price.interval}`}
               </Button>
